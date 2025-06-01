@@ -1,0 +1,67 @@
+[
+    {
+      "name": "Harvard",
+      "ingredients": [
+        { "name": "Hennessy VSOP", "amount": "50 ml" },
+        { "name": "Sweet vermouth", "amount": "25 ml" },
+        { "name": "Angostura", "amount": "3 dashes" },
+        { "name": "Soda", "amount": "Splash" }
+      ],
+      "method": "Stir",
+      "glass": "Nick&Nora",
+      "serve": "Up",
+      "garnish": "None"
+    },
+    {
+      "name": "Mai Tai",
+      "ingredients": [
+        { "name": "Smith & Cross", "amount": "20 ml" },
+        { "name": "Appleton 12 yo", "amount": "20 ml" },
+        { "name": "Lime juice", "amount": "20 ml" },
+        { "name": "Orange curaçao", "amount": "10 ml" },
+        { "name": "Orgeat", "amount": "10 ml" }
+      ],
+      "method": "Shake",
+      "glass": "Rocks",
+      "serve": "Crushed ice",
+      "garnish": "Spent half of lime (dome up) & Mint spring"
+    },
+    {
+      "name": "Clover Club",
+      "ingredients": [
+        { "name": "Eight lands gin", "amount": "50 ml" },
+        { "name": "Dry vermouth", "amount": "25 ml" },
+        { "name": "Lemon juice", "amount": "25 ml" },
+        { "name": "Raspberry syrup", "amount": "15 ml" },
+        { "name": "Egg white", "amount": "20 ml" }
+      ],
+      "method": "Double shake",
+      "glass": "Coupe",
+      "serve": "Up",
+      "garnish": "None"
+    },
+    {
+      "name": "Belafonte",
+      "ingredients": [
+        { "name": "Campari", "amount": "30 ml" },
+        { "name": "White port", "amount": "30 ml" },
+        { "name": "Tonic water", "amount": "Top up" }
+      ],
+      "method": "Build",
+      "glass": "Highball",
+      "serve": "Cubed ice",
+      "garnish": "Orange twist"
+    },
+    {
+      "name": "Stinger",
+      "ingredients": [
+        { "name": "Eight lands vodka", "amount": "50 ml" },
+        { "name": "White creme de menthe", "amount": "25 ml" }
+      ],
+      "method": "Stir",
+      "glass": "Nick&Nora",
+      "serve": "Up",
+      "garnish": "None"
+    }
+  ]
+  
