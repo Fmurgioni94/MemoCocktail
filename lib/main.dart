@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:MemoCocktail/homepage.dart';
+import 'package:MemoCocktail/pages/homepage.dart';
 import 'services/hive_service.dart';
 import 'data/initial_cocktails.dart';
 
@@ -16,12 +16,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Memo Cocktail',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-      ),
-      home: const MyHomePage(title: 'Memo Cocktail'),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Homepage(),
     );
   }
 }
