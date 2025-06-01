@@ -7,7 +7,7 @@ import 'data/initial_cocktails.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // ✅ Required for async init
   await HiveService.init(); // ✅ Initialize Hive
-  // await insertInitialCocktails(); // ✅ Insert initial cocktails
+  await insertInitialCocktails(); // ✅ Insert initial cocktails
   runApp(const MyApp());
 }
 
