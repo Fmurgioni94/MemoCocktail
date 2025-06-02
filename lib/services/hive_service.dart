@@ -16,7 +16,8 @@ class HiveService {
     final cocktailBox = await Hive.openBox<Cocktail>('cocktails');
     final menuBox = await Hive.openBox<Menu>('menus');
     await cocktailBox.clear();
-
+    await menuBox.clear();
+    
   }
 
   static Box<Cocktail> get cocktailBox => Hive.box<Cocktail>('cocktails');

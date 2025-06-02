@@ -31,6 +31,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'White creme de cacao', quantity: '20 ml'),
         Ingredient(name: 'Martini Ambrato', quantity: '20 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
     Cocktail(
       name: 'Mamba',
@@ -45,6 +47,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Tabasco', quantity: '20 drops'),
         Ingredient(name: 'Slim Tonic', quantity: 'Splash'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -59,6 +63,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Lemon juice', quantity: '25 ml'),
         Ingredient(name: 'Ginger Beer', quantity: 'Top up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -73,6 +79,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Lemon juice', quantity: '10 ml'),
         Ingredient(name: 'Ginger ale', quantity: 'Top up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -88,6 +96,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Agave water', quantity: '5 ml'),
         Ingredient(name: 'Lemonade', quantity: 'Top up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -102,6 +112,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Agave water', quantity: '25 ml'),
         Ingredient(name: 'Tabasco', quantity: '3 dashes'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -117,6 +129,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Raspberry & Cucumber shrub', quantity: '10 ml'),
         Ingredient(name: 'Soda', quantity: 'Splash'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -131,6 +145,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Campari', quantity: '15 ml'),
         Ingredient(name: 'Orange bitter', quantity: '2 dashes'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -205,6 +221,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Yuzu Aperitif', quantity: 'Spray'),
         Ingredient(name: 'Soda', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -219,6 +237,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Shiso Syrup', quantity: '10 ml'),
         Ingredient(name: 'Soda', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -232,6 +252,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Chay tea cordial', quantity: '30 ml'),
         Ingredient(name: 'Soda', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -247,6 +269,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Shiso Syrup', quantity: '15 ml'),
         Ingredient(name: 'Salt', quantity: 'Pinch'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -259,6 +283,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Haku infused wasabi', quantity: '35 ml'),
         Ingredient(name: 'Sake', quantity: '35 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -275,6 +301,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Sugar Syrup', quantity: '10 ml'),
         Ingredient(name: 'Champagne', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -289,6 +317,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Lemon Juice', quantity: '15 ml'),
         Ingredient(name: 'Red Currant Syrup', quantity: '15 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -301,6 +331,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Miso Buttered Toki', quantity: '35 ml'),
         Ingredient(name: 'Sweet Vermouth', quantity: '35 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -316,6 +348,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Matcha Syrup', quantity: '15 ml'),
         Ingredient(name: 'Soda', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),Cocktail(
       name: 'To Kill a Sunrise',
       methodology: 'Shaken',
@@ -329,6 +363,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Cinnamon syrup', quantity: '20 ml'),
         Ingredient(name: 'Grenadine', quantity: '2.5 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -343,6 +379,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Galliano', quantity: '5 ml'),
         Ingredient(name: 'Boker’s Bitter', quantity: '2.5 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -361,6 +399,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Cinnamon Syrup', quantity: '10 ml'),
         Ingredient(name: 'Earl Grey tea', quantity: 'Floating'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -374,6 +414,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Almond Grappa', quantity: '25 ml'),
         Ingredient(name: 'Maraschino Syrup', quantity: '5 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -389,6 +431,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Lime Juice', quantity: '10 ml'),
         Ingredient(name: 'Absinthe', quantity: '1 dash'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -404,6 +448,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Lime juice', quantity: '15 ml'),
         Ingredient(name: 'Blue Curaçao', quantity: '10 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -420,6 +466,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Creme de cacao Brown', quantity: '10 ml'),
         Ingredient(name: 'Prosecco', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -438,6 +486,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Angostura', quantity: '3 dashes'),
         Ingredient(name: 'Mandarin & Bergamot Soda', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
     Cocktail(
       name: 'Mortal Leap',
@@ -452,6 +502,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Maraschino', quantity: '5 ml'),
         Ingredient(name: 'Jasmine', quantity: 'Spray'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -466,6 +518,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Lime juice', quantity: '20 ml'),
         Ingredient(name: 'Cedrata Tassoni', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -480,6 +534,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Belvedere 10', quantity: '20 ml'),
         Ingredient(name: 'Cocchi americano', quantity: '5 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -495,6 +551,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Rosemary, Lavander and honey syrup', quantity: '15 ml'),
         Ingredient(name: 'Maraschino', quantity: '15 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -510,6 +568,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Leopold Absinthe', quantity: '15 ml'),
         Ingredient(name: 'Prosecco', quantity: 'Top up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -523,6 +583,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Frangelico', quantity: '30 ml'),
         Ingredient(name: 'Pistacchio Ice Cream', quantity: '30 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -541,6 +603,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Sugar', quantity: ''),
         Ingredient(name: 'Mascarpone', quantity: ''),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -555,6 +619,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Bergamot Puree', quantity: '20 ml'),
         Ingredient(name: 'Egg White', quantity: '20 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -570,6 +636,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Ancho Reyes Verde', quantity: '10 ml'),
         Ingredient(name: 'Campari', quantity: '5 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -584,6 +652,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Lemon Juice', quantity: '20 ml'),
         Ingredient(name: 'Crodino', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -598,6 +668,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Rosé petal syrup', quantity: '15 ml'),
         Ingredient(name: 'Lemon Juice', quantity: '10 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
   Cocktail(
       name: 'Aguacaliente',
@@ -612,6 +684,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Lime Juice', quantity: '20 ml'),
         Ingredient(name: 'Creme de banane', quantity: '15 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -627,6 +701,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Sugar Syrup', quantity: '5 ml'),
         Ingredient(name: 'Pimento Dram', quantity: '5 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -642,6 +718,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Koko Kanu', quantity: '15 ml'),
         Ingredient(name: 'Palo Cortado', quantity: '5 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -657,6 +735,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Ojo De Dios Caffè', quantity: '2.5 ml'),
         Ingredient(name: 'Slim Tonic', quantity: 'Top up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -670,6 +750,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Sour Cherry liquer', quantity: '30 ml'),
         Ingredient(name: 'Lime Juice', quantity: '30 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -685,6 +767,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Salt Solution', quantity: '3 dashes'),
         Ingredient(name: 'Soda', quantity: 'Top Up'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -698,6 +782,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Sugar Syrup', quantity: '5 ml'),
         Ingredient(name: 'Salt solution', quantity: '3 dashes'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
     Cocktail(
@@ -712,6 +798,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Lime Juice', quantity: '25 ml'),
         Ingredient(name: 'Scotch Bonnet Chili', quantity: '5 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
 
   ];
