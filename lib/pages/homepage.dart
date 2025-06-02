@@ -4,6 +4,11 @@ import 'package:MemoCocktail/pages/menus.dart';
 import 'package:MemoCocktail/pages/settings.dart';
 import 'package:MemoCocktail/pages/test.dart';
 
+
+import 'package:hive/hive.dart';
+import '../models/cocktail.dart';
+import '../pages/cocktaildetailpage.dart'; // Adjust path if needed
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -14,7 +19,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   int _selectedIndex = 0; 
   List<Widget> _pages = const [
-    HomePageContent(),
+    Homepagecontent(),
     Menus(),
     Test(),
     Settings(),
@@ -92,66 +97,60 @@ class _HomepageState extends State<Homepage> {
 }
 
 class CustomSearchDelegate extends SearchDelegate {
-  List<String> cocktailTitles = [
-  'Harvard',
-  'Mai Tai',
-  'Clover Club',
-  'Belafonte',
-  'Stinger',
-  ];
-
   @override
   List<Widget> buildActions(BuildContext context) {
-    return [IconButton(
-      icon: const Icon(Icons.clear),
-      onPressed: () {
-        query = '';
-      },
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () => query = '',
       ),
     ];
   }
+
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
-      onPressed: () {
-        close(context, null);
-      },
-      icon: const Icon(Icons.arrow_back)
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () => close(context, null),
     );
   }
 
   @override
   Widget buildResults(BuildContext context) {
-    List<String> matchQuery = [];
-    for (var cocktail in cocktailTitles) {
-      if(cocktail.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(cocktail);
-      }
-    }
-    return ListView.builder(
-      itemCount: matchQuery.length, 
-      itemBuilder: (context, index) {
-        var result = matchQuery[index];
-        return ListTile(
-          title: Text(result)
-        );
-      },
-    );
+    return _buildResultsOrSuggestions(context);
   }
+
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<String> matchQuery = [];
-    for (var cocktail in cocktailTitles) {
-      if(cocktail.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(cocktail);
-      }
+    return _buildResultsOrSuggestions(context);
+  }
+
+  Widget _buildResultsOrSuggestions(BuildContext context) {
+    final cocktailBox = Hive.box<Cocktail>('cocktails');
+
+    final cocktails = cocktailBox.values
+        .where((c) => c.name.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    if (cocktails.isEmpty) {
+      return const Center(child: Text("No cocktails found."));
     }
+
     return ListView.builder(
-      itemCount: matchQuery.length, 
+      itemCount: cocktails.length,
       itemBuilder: (context, index) {
-        var result = matchQuery[index];
+        final cocktail = cocktails[index];
         return ListTile(
-          title: Text(result)
+          title: Text(cocktail.name),
+          onTap: () {
+            close(context, null);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => CocktailDetailPage(cocktail: cocktail),
+              ),
+            );
+          },
         );
       },
     );
