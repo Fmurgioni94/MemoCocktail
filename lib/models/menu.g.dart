@@ -18,7 +18,7 @@ class MenuAdapter extends TypeAdapter<Menu> {
     };
     return Menu(
       title: fields[0] as String,
-      cocktails: (fields[1] as List).cast<Cocktail>(),
+      cocktailsNames: (fields[1] as List).cast<String>(),
     );
   }
 
@@ -29,7 +29,7 @@ class MenuAdapter extends TypeAdapter<Menu> {
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
-      ..write(obj.cocktails);
+      ..write(obj.cocktailsNames);
   }
 
   @override

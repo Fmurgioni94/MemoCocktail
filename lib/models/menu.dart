@@ -9,11 +9,11 @@ class Menu {
   final String title;
  
   @HiveField(1)
-  final List<Cocktail> cocktails;
+  final List<String> cocktailsNames;
  
   Menu({
     required this.title,
-    required this.cocktails,
+    required this.cocktailsNames,
   });
 }
  

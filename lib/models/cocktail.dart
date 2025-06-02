@@ -23,6 +23,12 @@ class Cocktail {
   @HiveField(5)
   final List<Ingredient> ingredients;
 
+  @HiveField(6)
+  final String levelTag;
+
+  @HiveField(7)
+  final String notes;
+
   Cocktail({
     required this.name,
     required this.methodology,
@@ -30,5 +36,7 @@ class Cocktail {
     required this.ice,
     required this.garnish,
     required this.ingredients,
+    required this.levelTag,
+    required this.notes,
   });
 }

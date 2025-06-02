@@ -16,6 +16,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Angostura', quantity: '3 dashes'),
         Ingredient(name: 'Soda', quantity: 'Splash'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
     Cocktail(
       name: 'Mai Tai',
@@ -30,6 +32,9 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Orange curaçao', quantity: '10 ml'),
         Ingredient(name: 'Orgeat', quantity: '10 ml'),
       ],
+      levelTag: 'Junior',
+      notes: '',
+
     ),
     Cocktail(
       name: 'Clover Club',
@@ -44,6 +49,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Raspberry syrup', quantity: '15 ml'),
         Ingredient(name: 'Egg white', quantity: '20 ml'),
       ],
+      levelTag: 'Junior',
+      notes: '',
     ),
     Cocktail(
       name: 'Belafonte',
@@ -56,6 +63,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'White port', quantity: '30 ml'),
         Ingredient(name: 'Tonic water', quantity: 'Top up'),
       ],
+      levelTag: 'Senior',
+      notes: '',
     ),
     Cocktail(
       name: 'Stinger',
@@ -67,6 +76,8 @@ Future<void> insertInitialCocktails() async {
         Ingredient(name: 'Eight lands vodka', quantity: '50 ml'),
         Ingredient(name: 'White creme de menthe', quantity: '25 ml'),
       ],
+      levelTag: 'Bartender',
+      notes: '',
     ),
   ];
 

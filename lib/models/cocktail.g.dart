@@ -23,13 +23,15 @@ class CocktailAdapter extends TypeAdapter<Cocktail> {
       ice: fields[3] as String,
       garnish: fields[4] as String,
       ingredients: (fields[5] as List).cast<Ingredient>(),
+      levelTag: fields[6] as String,
+      notes: fields[7] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, Cocktail obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
@@ -41,7 +43,11 @@ class CocktailAdapter extends TypeAdapter<Cocktail> {
       ..writeByte(4)
       ..write(obj.garnish)
       ..writeByte(5)
-      ..write(obj.ingredients);
+      ..write(obj.ingredients)
+      ..writeByte(6)
+      ..write(obj.levelTag)
+      ..writeByte(7)
+      ..write(obj.notes);
   }
 
   @override
