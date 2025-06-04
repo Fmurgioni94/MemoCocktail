@@ -9,7 +9,7 @@ class Test extends StatelessWidget {
       appBar: appBar(),
       body: const Center(
         child: Text(
-          'This is the Test Page',
+          'WORK IN PROGRESS',
           style: TextStyle(fontSize: 24),
         ),
       ),

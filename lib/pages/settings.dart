@@ -17,7 +17,7 @@ class Settings extends StatelessWidget {
       ),
       body: const Center(
         child: Text(
-          'This is the Setting Page',
+          'WORK IN PROGRESS',
           style: TextStyle(fontSize: 24),
         ),
       ),

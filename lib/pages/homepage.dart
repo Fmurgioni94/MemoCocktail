@@ -18,7 +18,7 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   int _selectedIndex = 0; 
-  List<Widget> _pages = const [
+  final List<Widget> _pages = const [
     Homepagecontent(),
     Menus(),
     Test(),
@@ -47,7 +47,7 @@ class _HomepageState extends State<Homepage> {
       },
     backgroundColor: Colors.deepPurpleAccent,
     selectedItemColor: Colors.white,
-    unselectedItemColor: Colors.white70,
+    unselectedItemColor: Colors.grey,
     items: const [
       BottomNavigationBarItem(
         label: 'Home',
