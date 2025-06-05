@@ -4,10 +4,8 @@ import '../services/hive_service.dart';
 Future<void> insertInitialMenus() async {
   final menus = <Menu>[
     Menu(
-      title: "Salamanca",
+      title: "Virgin & Low ABV",
       cocktailsNames: [
-        "Salamanca (cocktail)",
-        "Virgin & Low ABV",
         "Mamba",
         "Virgin Pennicciline",
         "Forest For The Trees",
@@ -47,18 +45,20 @@ Future<void> insertInitialMenus() async {
     Menu(
       title: "Attic",
       cocktailsNames: [
-        "French Canadian",
-        "Teano",
-        "Alabaster Ale",
-        "Lovely Pear",
-        "Apertas",
-        "Marcello",
-        "Zaza",
+        'Nico',
+        'L\'Italien',
+        'Bandolero',
+        'The Duke Bellini',
+        'House Punch',
+        'Teano',
+        'Apertas',
+        'Cicchetto',
       ],
     ),
     Menu(
       title: "Tavern",
       cocktailsNames: [
+        'Al-Madinah',
         "Mortal Leap",
         "Three Weels",
         "Vespa 98",
@@ -69,10 +69,6 @@ Future<void> insertInitialMenus() async {
         "Beretta",
         "Mezzo & Mezzo",
       ],
-    ),
-    Menu(
-      title: "Al-Madinah",
-      cocktailsNames: ["May Queen"],
     ),
     Menu(
       title: "Terrace",
@@ -88,17 +84,226 @@ Future<void> insertInitialMenus() async {
       ],
     ),
     Menu(
-      title: "Pantry",
+      title: "Weekly Selection",
       cocktailsNames: [
-        "La Cura",
-        "Albariza",
-        "Carthusian",
-        "Persistence",
-        "Carte Blanche",
-        "Endeavour",
+        "Blinker",
+        "Corpse Reviver #1",
+        "Gipsy Queen",
+        "Old Cuban",
+        "Tom Collins"
       ],
     ),
-  ];
+    Menu(
+      title: "Negroni Menu",
+      cocktailsNames: [
+        "Vintage Negroni",
+        "Vintage Americano",
+        "The Camillo",
+        "The Pascal",
+        "The Fosco"
+      ],
+    ),
+  Menu(
+    title: "A",
+    cocktailsNames: [
+      "Absinthe Frappé",
+      "Adonis",
+      "Airmail",
+      "Americano",
+      "Aperol Spritz",
+      "Army & Navy",
+      "Aviation",
+    ],
+  ),
+  Menu(
+    title: "B",
+    cocktailsNames: [
+      "Bamboo",
+      "Bee’s Knees",
+      "Bellini",
+      "Black / White Russian",
+      "Bobby Burns",
+      "Boulevardier",
+      "Brandy Alexander",
+      "Brandy Crusta",
+      "Bramble",
+      "Buck’s Fizz",
+    ],
+  ),
+  Menu(
+    title: "C",
+    cocktailsNames: [
+      "Caipi",
+      "Capirinha",
+      "Casino",
+      "Champagne Cocktail",
+      "Charlie Chaplin",
+      "Clover Club",
+      "Coffee Cocktail",
+      "Corpse Reviver #2",
+      "Cosmopolitan",
+    ],
+  ),
+  Menu(
+    title: "D",
+    cocktailsNames: [
+      "Daiquiri",
+      "Dark ’N’ Stormy",
+      "Dirty Martini",
+    ],
+  ),
+  Menu(
+    title: "E",
+    cocktailsNames: [
+      "El Diablo",
+      "El Presidente",
+      "Embassy",
+      "Espresso Martini",
+    ],
+  ),
+  Menu(
+    title: "F",
+    cocktailsNames: [
+      "Fish House Punch",
+      "Floradora",
+      "French Martini",
+    ],
+  ),
+  Menu(
+    title: "G",
+    cocktailsNames: [
+      "Gibson",
+      "Gimlet",
+      "Gin Rickey",
+      "Godfather",
+      "Golden Cadillac",
+      "Grasshopper",
+    ],
+  ),
+  Menu(
+    title: "H",
+    cocktailsNames: [
+      "Harvard",
+      "Hanky Panky",
+      "Hemingway Special",
+      "Hot Toddy",
+      "Hurricane",
+    ],
+  ),
+  Menu(
+    title: "I",
+    cocktailsNames: [
+      "Irish Coffee",
+    ],
+  ),
+  Menu(
+    title: "J",
+    cocktailsNames: [
+      "Jack Rose",
+      "Jungle Bird",
+    ],
+  ),
+  Menu(
+    title: "K",
+    cocktailsNames: [
+      "Kyr / Kyr Royale",
+    ],
+  ),
+  Menu(
+    title: "M",
+    cocktailsNames: [
+      "Mai Tai",
+      "Manhattan Perfect",
+      "Manhattan Sweet",
+      "Margarita",
+      "Martinez",
+      "Martini Dry",
+      "Martini Very Dry",
+      "Martini Wet",
+      "Mary Pickford",
+      "Milano Torino",
+      "Mimosa",
+      "Mint Julep",
+      "Mojito",
+      "Morning Glory Fizz",
+      "Moscow Mule",
+    ],
+  ),
+  Menu(
+    title: "N",
+    cocktailsNames: [
+      "Negroni",
+      "New York Sour",
+    ],
+  ),
+  Menu(
+    title: "O",
+    cocktailsNames: [
+      "Old Fashioned",
+    ],
+  ),
+  Menu(
+    title: "P",
+    cocktailsNames: [
+      "Paloma",
+      "Passion Martini",
+      "Pegu Club",
+      "Pennicillin",
+      "Perfect Lady",
+      "Pina Colada",
+      "Pink Gin",
+      "Pisco Sour",
+      "Planter’s Punch",
+    ],
+  ),
+  Menu(
+    title: "R",
+    cocktailsNames: [
+      "Ramos Gin Fizz",
+      "Rattlesnake",
+      "Rob Roy",
+      "Rusty Nail",
+    ],
+  ),
+  Menu(
+    title: "S",
+    cocktailsNames: [
+      "Saratoga",
+      "Sazerac",
+      "Satan’s Whiskers",
+      "Sherry Cobbler",
+      "Sidecar",
+      "Singapore Sling",
+      "Sours (Any)",
+      "Stinger",
+    ],
+  ),
+  Menu(
+    title: "T",
+    cocktailsNames: [
+      "The Last Word",
+      "Toreador",
+      "Toronto",
+      "Twentieth Century",
+      "Twinkle",
+      "Tuxedo",
+    ],
+  ),
+  Menu(
+    title: "V",
+    cocktailsNames: [
+      "Vieux Carré",
+    ],
+  ),
+  Menu(
+    title: "W",
+    cocktailsNames: [
+      "Whisky Mac",
+      "White Lady",
+      "White Negroni",
+    ],
+  ),
+];
 
   final box = HiveService.menuBox;
 

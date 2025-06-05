@@ -12,12 +12,13 @@ class HiveService {
     Hive.registerAdapter(CocktailAdapter());
     Hive.registerAdapter(MenuAdapter());
 
-
+    // await Hive.openBox<Cocktail>('cocktails');
+    // await Hive.openBox<Menu>('menus');
     final cocktailBox = await Hive.openBox<Cocktail>('cocktails');
     final menuBox = await Hive.openBox<Menu>('menus');
     await cocktailBox.clear();
     await menuBox.clear();
-    
+    // await insertInitialMenus();
   }
 
   static Box<Cocktail> get cocktailBox => Hive.box<Cocktail>('cocktails');
