@@ -138,7 +138,7 @@ Future<void> insertInitialCocktails() async {
 
     Cocktail(
       name: 'Bordoni',
-      methodology: 'Stirred',
+      methodology: 'Stir',
       glass: 'Rocks',
       ice: 'Block',
       garnish: 'Grapefruit twist',
@@ -1041,7 +1041,7 @@ Cocktail(
 
 Cocktail(
   name: 'Adonis',
-  methodology: 'Stirred',
+  methodology: 'Stir',
   glass: 'Nick & Nora',
   ice: 'Up',
   garnish: 'Orange twist',
@@ -1133,7 +1133,7 @@ Cocktail(
 
 Cocktail(
   name: 'Bamboo',
-  methodology: 'Stirred',
+  methodology: 'Stir',
   glass: 'Nick & Nora',
   ice: 'Up',
   garnish: 'Lemon Twist',
@@ -1206,7 +1206,7 @@ Cocktail(
 
 Cocktail(
   name: 'Boulevardier',
-  methodology: 'Stirred',
+  methodology: 'Stir',
   glass: 'Nick & Nora',
   ice: 'Up',
   garnish: 'Orange Twist',
