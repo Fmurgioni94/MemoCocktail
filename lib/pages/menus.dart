@@ -28,7 +28,7 @@ class _MenusState extends State<Menus> {
           
           // Organize menus by venue type
           final signaturesMenus = menus.where((menu) => 
-            ['Terrace', 'Tavern', 'Attic', 'Sushi', 'Circol & Parlour', 'Virgin & Low ABV'].contains(menu.title)).toList();
+            ['Terrace', 'Tavern', 'Attic', 'Sushi', 'Circle & Parlour', 'Virgin & Low ABV'].contains(menu.title)).toList();
           
           final classicMenus = menus.where((menu) => 
             ["A","B","C","D","E","F","G","H","I","J","K","M","N","O","P","R","S","T","V","W",].contains(menu.title)).toList();

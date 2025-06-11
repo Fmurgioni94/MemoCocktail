@@ -2666,6 +2666,22 @@ Cocktail(
   levelTag: 'Bartender',
   notes: '',
 ),
+Cocktail(
+  name: 'Brooklyn',
+  methodology: 'Stir',
+  glass: 'Nick & Nora',
+  ice: 'Up',
+  garnish: 'No garnish',
+  ingredients: [
+    Ingredient(name: 'Whistle Pig 10', quantity: '45 ml'),
+    Ingredient(name: 'Sweet Vermouth', quantity: '45 ml'),
+    Ingredient(name: 'Amer Picon', quantity: '5 ml'),
+    Ingredient(name: 'Maraschino', quantity: '5 ml'),   
+  ],
+  levelTag: 'Bartender',
+  notes: '',
+),
+
 
 
   ];

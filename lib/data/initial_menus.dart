@@ -30,7 +30,7 @@ Future<void> insertInitialMenus() async {
       ],
     ),
     Menu(
-      title: "Circol & Parlour",
+      title: "Circle & Parlour",
       cocktailsNames: [
         "To Kill a Sunrise",
         "Harvey Doorbanger",
@@ -86,11 +86,11 @@ Future<void> insertInitialMenus() async {
     Menu(
       title: "Weekly Selection",
       cocktailsNames: [
-        "Blinker",
-        "Corpse Reviver #1",
-        "Gipsy Queen",
-        "Old Cuban",
-        "Tom Collins"
+        "Adonis",
+        "Brooklyn",
+        "Planter’s Punch",
+        "Singapore Sling",
+        "Toreador"
       ],
     ),
     Menu(
