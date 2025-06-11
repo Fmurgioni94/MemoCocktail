@@ -57,13 +57,74 @@ class _MenusState extends State<Menus> {
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
-          child: Text(
-            title,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.deepPurpleAccent,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.deepPurpleAccent,
+                ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.edit),
+                color: Colors.deepPurpleAccent,
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text('Add to $title'),
+                      content: SizedBox(
+                        width: double.maxFinite,
+                        child: ValueListenableBuilder(
+                          valueListenable: Hive.box<Menu>('menus').listenable(),
+                          builder: (context, Box<Menu> box, _) {
+                            final allMenus = box.values.toList();
+                            // Filter out menus that are already in this section
+                            final availableMenus = allMenus.where(
+                              (menu) => !menus.contains(menu)
+                            ).toList();
+
+                            if (availableMenus.isEmpty) {
+                              return const Center(
+                                child: Text('No available menus to add'),
+                              );
+                            }
+
+                            return ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: availableMenus.length,
+                              itemBuilder: (context, index) {
+                                final menu = availableMenus[index];
+                                return ListTile(
+                                  title: Text(menu.title),
+                                  subtitle: Text('${menu.cocktailsNames.length} cocktails'),
+                                  onTap: () {
+                                    // Add the menu to this section
+                                    setState(() {
+                                      menus.add(menu);
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text('Cancel'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
         SizedBox(

@@ -1,3 +1,4 @@
+import 'package:MemoCocktail/pages/databasecomunicationpage.dart';
 import 'package:MemoCocktail/pages/homepagecontent.dart';
 import 'package:flutter/material.dart';
 import 'package:MemoCocktail/pages/menus.dart';
@@ -23,6 +24,7 @@ class _HomepageState extends State<Homepage> {
     Menus(),
     Test(),
     Settings(),
+    Databasecomunicationpage(),
   ];
 
   @override
@@ -64,6 +66,10 @@ class _HomepageState extends State<Homepage> {
       BottomNavigationBarItem(
         label: 'Settings',
         icon: Icon(Icons.settings)
+      ),
+      BottomNavigationBarItem(
+        label: 'Data-Base',
+        icon: Icon(Icons.data_usage)
       )
     ],
     );
