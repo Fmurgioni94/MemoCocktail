@@ -177,23 +177,31 @@ class _TestState extends State<Test> {
   @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: selectedMenu != null ? AppBar(
-      title: Text(
-        selectedMenu!.title,
-        style: const TextStyle(color: Colors.white),
-      ),
-      backgroundColor: Colors.deepPurpleAccent,
-      iconTheme: const IconThemeData(color: Colors.white),
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () {
-          setState(() {
-            selectedMenu = null;
-            testCocktails = [];
-          });
-        },
-      ),
-    ) : null,
+    appBar: AppBar(
+  backgroundColor: Colors.deepPurpleAccent,
+  iconTheme: const IconThemeData(color: Colors.white),
+  title: Text(
+    selectedMenu?.title ?? 'Cocktail Test',
+    style: const TextStyle(
+      color: Colors.white,
+      fontSize: 26, 
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+  centerTitle: false,
+  leading: selectedMenu != null
+      ? IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            setState(() {
+              selectedMenu = null;
+              testCocktails = [];
+            });
+          },
+        )
+      : null,
+),
+
     body: ValueListenableBuilder(
       valueListenable: Hive.box<Menu>('menus').listenable(),
       builder: (context, Box<Menu> menuBox, _) {

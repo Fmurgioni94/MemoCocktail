@@ -10,6 +10,7 @@ class Databasecomunicationpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: appBar(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -73,6 +74,24 @@ class Databasecomunicationpage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  AppBar appBar() {
+    return AppBar(
+      title: const Text(
+      'Data-base',
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 26, 
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    centerTitle: false,
+    backgroundColor: Colors.deepPurpleAccent,
+    iconTheme: IconThemeData(
+      color: Colors.white
+    )
     );
   }
 

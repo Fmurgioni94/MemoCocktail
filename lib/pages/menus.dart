@@ -17,6 +17,7 @@ class _MenusState extends State<Menus> {
     final cocktailBox = Hive.box<Cocktail>('cocktails');
 
     return Scaffold(
+      appBar: appBar(),
       body: ValueListenableBuilder(
         valueListenable: menuBox.listenable(),
         builder: (context, Box<Menu> box, _) {
@@ -48,6 +49,21 @@ class _MenusState extends State<Menus> {
           );
         },
       ),
+    );
+  }
+
+  AppBar appBar() {
+    return AppBar(
+      title: const Text(
+      'Menus',
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 26, 
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    centerTitle: false,
+    backgroundColor: Colors.deepPurpleAccent,
     );
   }
 

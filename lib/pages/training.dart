@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Settings extends StatelessWidget {
-  const Settings({super.key});
+class Training extends StatelessWidget {
+  const Training({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class Settings extends StatelessWidget {
     return AppBar(
       
       title: const Text(
-        'Settings',
+        'Training',
         style: TextStyle(
           color: Colors.white,
           fontSize: 26, 
@@ -29,9 +29,6 @@ class Settings extends StatelessWidget {
       ),
       centerTitle: false,
       backgroundColor: Colors.deepPurpleAccent,
-      iconTheme: IconThemeData(
-        color: Colors.white
-      ),
     );
   }
 }
