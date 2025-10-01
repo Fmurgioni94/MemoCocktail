@@ -1,6 +1,7 @@
 import '../models/cocktail.dart';
+import 'package:flutter/foundation.dart';
 import '../models/ingredient.dart';
-import '../services/hive_service.dart';
+import '../services/firestore_service.dart';
 
 Future<void> insertInitialCocktails() async {
   final cocktails = <Cocktail>[
@@ -1392,7 +1393,7 @@ Cocktail(
   garnish: 'No garnish',
   ingredients: [
     Ingredient(name: 'Jonny Walker Black', quantity: '50 ml'),
-    Ingredient(name: 'Amaretto di', quantity: '25 ml'),
+    Ingredient(name: 'Amaretto di Saronno', quantity: '25 ml'),
   ],
   levelTag: 'Bartender',
   notes: '',
@@ -2611,12 +2612,18 @@ Cocktail(
 
   ];
 
-  final box = HiveService.cocktailBox;
-
-  for (var cocktail in cocktails) {
-    // Avoid duplication
-    if (!box.containsKey(cocktail.name)) {
-      await box.put(cocktail.name, cocktail);
+  // Idempotent seeding: insert only missing cocktails in batch
+  try {
+    final existing = await FirestoreService.getExistingCocktailNames();
+    final missing = cocktails.where((c) => !existing.contains(c.name)).toList();
+    debugPrint('Seeding cocktails: ${missing.length} missing of ${cocktails.length}');
+    if (missing.isNotEmpty) {
+      await FirestoreService.upsertCocktailsBatch(missing);
+      debugPrint('Seeding cocktails complete');
+    } else {
+      debugPrint('No cocktails to seed');
     }
+  } catch (e) {
+    debugPrint('Error seeding cocktails: $e');
   }
 }

@@ -1,5 +1,5 @@
 import '../models/menu.dart';
-import '../services/hive_service.dart';
+import '../services/firestore_service.dart';
 
 Future<void> insertInitialMenus() async {
   final menus = <Menu>[
@@ -305,11 +305,7 @@ Future<void> insertInitialMenus() async {
   ),
 ];
 
-  final box = HiveService.menuBox;
-
-  for (var menu in menus) {
-    if (!box.containsKey(menu.title)) {
-      await box.put(menu.title, menu);
-    }
-  }
+//   for (var menu in menus) {
+//     await FirestoreService.upsertMenu(menu);
+//   }
 }
