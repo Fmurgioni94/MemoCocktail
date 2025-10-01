@@ -1,17 +1,23 @@
-import 'package:hive/hive.dart';
-
-part 'ingredient.g.dart';
-
-@HiveType(typeId: 0)
 class Ingredient {
-  @HiveField(0)
   final String name;
-
-  @HiveField(1)
   final String quantity;
 
   Ingredient({
     required this.name,
     required this.quantity,
   });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'quantity': quantity,
+    };
+  }
+
+  factory Ingredient.fromMap(Map<String, dynamic> map) {
+    return Ingredient(
+      name: map['name'] as String? ?? '',
+      quantity: map['quantity'] as String? ?? '',
+    );
+  }
 }

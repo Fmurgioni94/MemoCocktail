@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import '../models/menu.dart';
-import '../models/cocktail.dart';
 import 'addNewMenu.dart';
+import '../services/firestore_service.dart';
 
 class ModifyMenu extends StatefulWidget {
   const ModifyMenu({super.key});
@@ -55,19 +54,14 @@ class _ModifyMenuState extends State<ModifyMenu> {
             ),
           ),
           Expanded(
-            child: ValueListenableBuilder(
-              valueListenable: Hive.box<Menu>('menus').listenable(),
-              builder: (context, Box<Menu> menuBox, _) {
-                if (menuBox.isEmpty) {
-                  return const Center(
-                    child: Text(
-                      'No menus available to modify',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  );
+            child: StreamBuilder<List<Menu>>(
+              stream: FirestoreService.watchMenus(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return const Center(child: CircularProgressIndicator());
                 }
 
-                final filteredMenus = menuBox.values.where((menu) {
+                final filteredMenus = snapshot.data!.where((menu) {
                   return menu.title.toLowerCase().contains(_searchQuery);
                 }).toList();
 
@@ -85,7 +79,6 @@ class _ModifyMenuState extends State<ModifyMenu> {
                   itemCount: filteredMenus.length,
                   itemBuilder: (context, index) {
                     final menu = filteredMenus[index];
-                    final cocktailBox = Hive.box<Cocktail>('cocktails');
 
                     return Card(
                       margin: const EdgeInsets.only(bottom: 16),
@@ -129,8 +122,8 @@ class _ModifyMenuState extends State<ModifyMenu> {
                                             child: const Text('Cancel'),
                                           ),
                                           TextButton(
-                                            onPressed: () {
-                                              menuBox.delete(menu.title);
+                                            onPressed: () async {
+                                              await FirestoreService.deleteMenuByTitle(menu.title);
                                               Navigator.pop(context);
                                             },
                                             child: const Text('Delete'),
@@ -157,14 +150,11 @@ class _ModifyMenuState extends State<ModifyMenu> {
                                 ),
                                 const SizedBox(height: 8),
                                 ...menu.cocktailsNames.map((cocktailName) {
-                                  final cocktail = cocktailBox.get(cocktailName);
-                                  if (cocktail == null) return const SizedBox.shrink();
-                                  
                                   return Padding(
                                     padding: const EdgeInsets.only(bottom: 4),
-                                    child: Text('• ${cocktail.name}'),
+                                    child: Text('• $cocktailName'),
                                   );
-                                }).toList(),
+                                }),
                               ],
                             ),
                           ),

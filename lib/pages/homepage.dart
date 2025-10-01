@@ -1,9 +1,6 @@
-import 'package:MemoCocktail/pages/databasecomunicationpage.dart';
 import 'package:MemoCocktail/pages/homepagecontent.dart';
 import 'package:flutter/material.dart';
 import 'package:MemoCocktail/pages/menus.dart';
-import 'package:MemoCocktail/pages/settings.dart';
-import 'package:MemoCocktail/pages/test.dart';
 import 'package:MemoCocktail/pages/training.dart';
 
 class Homepage extends StatefulWidget {
@@ -18,7 +15,6 @@ class _HomepageState extends State<Homepage> {
   final List<Widget> _pages = const [
     Homepagecontent(),
     Menus(),
-    Test(),
     Training()
   ];
 
@@ -54,10 +50,6 @@ class _HomepageState extends State<Homepage> {
       BottomNavigationBarItem(
         label: 'Menus',
         icon: Icon(Icons.menu_book)
-      ),
-      BottomNavigationBarItem(
-        label: 'Test',
-        icon: Icon(Icons.edit_note)
       ),
       BottomNavigationBarItem(
         label: 'Train',

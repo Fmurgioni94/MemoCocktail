@@ -1,32 +1,13 @@
-import 'package:hive/hive.dart';
 import 'ingredient.dart';
 
-part 'cocktail.g.dart';
-
-@HiveType(typeId: 1)
 class Cocktail {
-  @HiveField(0)
   final String name;
-
-  @HiveField(1)
   final String methodology;
-
-  @HiveField(2)
   final String glass;
-
-  @HiveField(3)
   final String ice;
-
-  @HiveField(4)
   final String garnish;
-
-  @HiveField(5)
   final List<Ingredient> ingredients;
-
-  @HiveField(6)
   final String levelTag;
-
-  @HiveField(7)
   final String notes;
 
   Cocktail({
@@ -39,4 +20,33 @@ class Cocktail {
     required this.levelTag,
     required this.notes,
   });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'methodology': methodology,
+      'glass': glass,
+      'ice': ice,
+      'garnish': garnish,
+      'ingredients': ingredients.map((i) => i.toMap()).toList(),
+      'levelTag': levelTag,
+      'notes': notes,
+    };
+  }
+
+  factory Cocktail.fromMap(Map<String, dynamic> map) {
+    final ingredientsData = (map['ingredients'] as List<dynamic>? ?? []);
+    return Cocktail(
+      name: map['name'] as String? ?? '',
+      methodology: map['methodology'] as String? ?? '',
+      glass: map['glass'] as String? ?? '',
+      ice: map['ice'] as String? ?? '',
+      garnish: map['garnish'] as String? ?? '',
+      ingredients: ingredientsData
+          .map((e) => Ingredient.fromMap(e as Map<String, dynamic>))
+          .toList(),
+      levelTag: map['levelTag'] as String? ?? '',
+      notes: map['notes'] as String? ?? '',
+    );
+  }
 }

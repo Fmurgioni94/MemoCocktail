@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import '../models/cocktail.dart';
 import 'addCocktailForm.dart';
+import '../services/firestore_service.dart';
 
 class ModifyCocktailPage extends StatefulWidget {  // Changed to StatefulWidget
   const ModifyCocktailPage({super.key});
@@ -56,19 +56,14 @@ class _ModifyCocktailPageState extends State<ModifyCocktailPage> {
             ),
           ),
           Expanded(
-            child: ValueListenableBuilder(
-              valueListenable: Hive.box<Cocktail>('cocktails').listenable(),
-              builder: (context, Box<Cocktail> box, _) {
-                if (box.isEmpty) {
-                  return const Center(
-                    child: Text(
-                      'No cocktails available to modify',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  );
+            child: StreamBuilder<List<Cocktail>>(
+              stream: FirestoreService.watchCocktails(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return const Center(child: CircularProgressIndicator());
                 }
 
-                final filteredCocktails = box.values.where((cocktail) {
+                final filteredCocktails = snapshot.data!.where((cocktail) {
                   return cocktail.name.toLowerCase().contains(_searchQuery) ||
                          cocktail.methodology.toLowerCase().contains(_searchQuery) ||
                          cocktail.glass.toLowerCase().contains(_searchQuery);
@@ -136,8 +131,8 @@ class _ModifyCocktailPageState extends State<ModifyCocktailPage> {
                                         child: const Text('Cancel'),
                                       ),
                                       TextButton(
-                                        onPressed: () {
-                                          box.delete(cocktail.name);
+                                        onPressed: () async {
+                                          await FirestoreService.deleteCocktailByName(cocktail.name);
                                           Navigator.pop(context);
                                         },
                                         child: const Text('Delete'),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import '../models/menu.dart';
 import '../models/cocktail.dart';
+import '../services/firestore_service.dart';
 
 class AddMenuForm extends StatefulWidget {
   final Menu? menu; // If null, we're adding a new menu
@@ -35,21 +35,14 @@ class _AddMenuFormState extends State<AddMenuForm> {
     super.dispose();
   }
 
-  void _saveMenu() {
+  void _saveMenu() async {
     if (_formKey.currentState!.validate() && _selectedCocktails.isNotEmpty) {
       final menu = Menu(
         title: _titleController.text,
         cocktailsNames: _selectedCocktails,
       );
 
-      final box = Hive.box<Menu>('menus');
-      if (widget.menu != null) {
-        // Update existing menu
-        box.put(widget.menu!.title, menu);
-      } else {
-        // Add new menu
-        box.put(menu.title, menu);
-      }
+      await FirestoreService.upsertMenu(menu);
 
       Navigator.pop(context);
     }
@@ -112,18 +105,16 @@ class _AddMenuFormState extends State<AddMenuForm> {
               ),
             ),
             Expanded(
-              child: ValueListenableBuilder(
-                valueListenable: Hive.box<Cocktail>('cocktails').listenable(),
-                builder: (context, Box<Cocktail> box, _) {
-                  if (box.isEmpty) {
-                    return const Center(
-                      child: Text('No cocktails available'),
-                    );
+              child: StreamBuilder<List<Cocktail>>(
+                stream: FirestoreService.watchCocktails(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return const Center(child: CircularProgressIndicator());
                   }
 
-                  final filteredCocktails = box.values.where((cocktail) {
-                    return cocktail.name.toLowerCase().contains(_searchQuery);
-                  }).toList();
+                  final filteredCocktails = snapshot.data!
+                      .where((cocktail) => cocktail.name.toLowerCase().contains(_searchQuery))
+                      .toList();
 
                   return ListView.builder(
                     padding: const EdgeInsets.all(16.0),
